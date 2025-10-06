@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Management System</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="bg-white shadow-md fixed w-full top-0 z-50">
+        <nav class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="text-2xl font-bold text-blue-600">EventPro</div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a  href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600 transition">Home</a>
+                    <a  href="{% url 'service'%}" class="text-gray-700 hover:text-blue-600 transition">Services</a>
+                    <a  href="{% url 'about' %}" class="text-gray-700 hover:text-blue-600 transition">About</a>
+                    <a  href="{% url 'contact' %}" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
+                    <a href="" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Request Quote</a>
+                </div>
+                <button class="md:hidden text-gray-700">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-20 bg-gradient-to-r from-blue-600 to-purple-600 text-white">
+        <div class="container mx-auto px-6 py-20">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h1 class="text-5xl font-bold mb-6 leading-tight">Creating Unforgettable Events That Leave Lasting Impressions</h1>
+                    <p class="text-xl mb-8 text-blue-100">From intimate gatherings to grand celebrations, we bring your vision to life with meticulous planning and flawless execution.</p>
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <a href="#request" class="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-100 transition text-center">Get Started</a>
+                        <a href="#portfolio" class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition text-center">View Our Work</a>
+                    </div>
+                </div>
+                <div class="hidden md:block">
+                    <div class="bg-white/10 backdrop-blur-lg rounded-lg p-8 h-96 flex items-center justify-center">
+                        <img src="./images/pexels-kseniachernaya-3951652.jpg"/>
+                        <p class="text-center text-lg">Hero Image Placeholder<br/>Event Photography</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trust Builders / Stats -->
+    <section class="bg-white py-12 shadow-sm">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">500+</div>
+                    <p class="text-gray-600">Events Completed</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">15+</div>
+                    <p class="text-gray-600">Years Experience</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">98%</div>
+                    <p class="text-gray-600">Client Satisfaction</p>
+                </div>
+                <div>
+                    <div class="text-4xl font-bold text-blue-600 mb-2">50+</div>
+                    <p class="text-gray-600">Vendor Partners</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Our Services</h2>
+                <p class="text-xl text-gray-600">Comprehensive event planning solutions tailored to your needs</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 15.546c-.523 0-1.046.151-1.5.454a2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.704 2.704 0 00-3 0 2.704 2.704 0 01-3 0 2.701 2.701 0 00-1.5-.454M9 6v2m3-2v2m3-2v2M9 3h.01M12 3h.01M15 3h.01M21 21v-7a2 2 0 00-2-2H5a2 2 0 00-2 2v7h18zm-3-9v-2a2 2 0 00-2-2H8a2 2 0 00-2 2v2h12z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Wedding Planning</h3>
+                    <p class="text-gray-600 mb-6">From engagement to reception, we create magical moments that celebrate your love story with elegance and style.</p>
+                    <a href="#" class="text-blue-600 font-semibold hover:text-blue-700">Learn More →</a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Corporate Events</h3>
+                    <p class="text-gray-600 mb-6">Professional event management for conferences, product launches, and team building activities that drive results.</p>
+                    <a href="#" class="text-purple-600 font-semibold hover:text-purple-700">Learn More →</a>
+                </div>
+
+                <div class="bg-white rounded-lg shadow-lg p-8 hover:shadow-xl transition">
+                    <div class="w-16 h-16 bg-pink-100 rounded-full flex items-center justify-center mb-6">
+                        <svg class="w-8 h-8 text-pink-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.828 14.828a4 4 0 01-5.656 0M9 10h.01M15 10h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Private Celebrations</h3>
+                    <p class="text-gray-600 mb-6">Birthday parties, anniversaries, and special occasions designed to create unforgettable memories with loved ones.</p>
+                    <a href="#" class="text-pink-600 font-semibold hover:text-pink-700">Learn More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">What Our Clients Say</h2>
+                <p class="text-xl text-gray-600">Don't just take our word for it</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-blue-200 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sarah Johnson</h4>
+                            <p class="text-sm text-gray-600">Wedding - June 2024</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-700">EventPro made our wedding day absolutely perfect. Every detail was handled with care and professionalism. We couldn't have asked for a better team!</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-purple-200 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Michael Chen</h4>
+                            <p class="text-sm text-gray-600">Corporate Event - Aug 2024</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-700">Our annual conference was executed flawlessly. The attention to detail and seamless coordination impressed all 300 attendees. Highly recommended!</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-8">
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 bg-pink-200 rounded-full mr-4"></div>
+                        <div>
+                            <h4 class="font-bold text-gray-800">Emily Rodriguez</h4>
+                            <p class="text-sm text-gray-600">Birthday Party - Sept 2024</p>
+                        </div>
+                    </div>
+                    <div class="text-yellow-400 mb-4">★★★★★</div>
+                    <p class="text-gray-700">They transformed my vision into reality for my milestone birthday. The creativity and execution were beyond my expectations. Thank you, EventPro!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Events Portfolio -->
+    <section id="portfolio" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">Recent Events</h2>
+                <p class="text-xl text-gray-600">A glimpse into our latest creations</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <div class="bg-gradient-to-br from-blue-400 to-blue-600 h-80 flex items-center justify-center text-white">
+                        <p class="text-lg">Event Image 1</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center">
+                            <h4 class="text-xl font-bold mb-2">Elegant Garden Wedding</h4>
+                            <p>150 Guests | June 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <div class="bg-gradient-to-br from-purple-400 to-purple-600 h-80 flex items-center justify-center text-white">
+                        <p class="text-lg">Event Image 2</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center">
+                            <h4 class="text-xl font-bold mb-2">Tech Conference 2024</h4>
+                            <p>300 Attendees | August 2024</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer">
+                    <div class="bg-gradient-to-br from-pink-400 to-pink-600 h-80 flex items-center justify-center text-white">
+                        <p class="text-lg">Event Image 3</p>
+                    </div>
+                    <div class="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-60 transition flex items-center justify-center opacity-0 group-hover:opacity-100">
+                        <div class="text-white text-center">
+                            <h4 class="text-xl font-bold mb-2">50th Birthday Gala</h4>
+                            <p>80 Guests | September 2024</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-12">
+                <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition inline-block">View Full Portfolio</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Request Form / CTA -->
+    <section id="request" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl font-bold text-gray-800 mb-4">Ready to Start Planning?</h2>
+                    <p class="text-xl text-gray-600">Tell us about your event and we'll get back to you within 24 hours</p>
+                </div>
+
+                <div class="bg-gray-50 rounded-lg p-8 shadow-lg">
+                    <form class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Your Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="John Doe">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Email Address</label>
+                                <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="john@example.com">
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Phone Number</label>
+                                <input type="tel" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="+1 (555) 000-0000">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Event Type</label>
+                                <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                    <option>Select event type</option>
+                                    <option>Wedding</option>
+                                    <option>Corporate Event</option>
+                                    <option>Birthday Party</option>
+                                    <option>Other</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Event Date</label>
+                                <input type="date" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Number of Guests</label>
+                                <input type="number" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="50">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-2">Additional Details</label>
+                            <textarea rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Tell us more about your event vision..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 text-white py-4 rounded-lg font-semibold hover:bg-blue-700 transition">Submit Request</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">EventPro</h3>
+                    <p class="text-gray-400">Creating memorable events that exceed expectations since 2009.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#" class="hover:text-white transition">About Us</a></li>
+                        <li><a href="#" class="hover:text-white transition">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition">Wedding Planning</a></li>
+                        <li><a href="#" class="hover:text-white transition">Corporate Events</a></li>
+                        <li><a href="#" class="hover:text-white transition">Private Parties</a></li>
+                        <li><a href="#" class="hover:text-white transition">Event Design</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-bold mb-4">Contact</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>123 Event Street</li>
+                        <li>City, State 12345</li>
+                        <li>Phone: (555) 123-4567</li>
+                        <li>Email: info@eventpro.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-gray-400">
+                <p>&copy; 2024 EventPro. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
