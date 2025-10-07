@@ -22,5 +22,6 @@ urlpatterns = [
     path("", home_view, name='home' ),
     path("api/", include('rest_framework.urls'), name="rest_api"),
     path("", include('pages.urls')),  # Include the pages app URLs
-    path("", include("user_app.urls"))
+    path("", include("user_app.urls")),
+    path("event/", include("event_app.urls")),
 ]
