@@ -4,13 +4,13 @@ from .models import EventSchema
 
 class EventCreateSerializer(serializers.ModelSerializer): # serializer used when creating an event
     class Meta:
-        myModel = EventSchema
+        model = EventSchema
         fields = '__all__'
 
 
 class UserEventViewSerializer(serializers.ModelSerializer): # serializer will be used when the user views events
     class Meta: 
-        myModel = EventSchema
+        model = EventSchema
         fields = [
             'event_id',
             'event_title',
@@ -24,5 +24,5 @@ class UserEventViewSerializer(serializers.ModelSerializer): # serializer will be
 
 class EventAmdinViewSerializer(serializers.ModelSerializer):
     class Meta:
-        myModel = EventSchema
+        model = EventSchema
         fields = '__all__'
