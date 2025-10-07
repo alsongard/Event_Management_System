@@ -13,3 +13,16 @@ class EventReviewAPIView(generics.RetrieveAPIView):
     serializer_class = EventCreateSerializer
 
 
+class EventViewAPIVIEW(generics.ListAPIView):
+    queryset = EventSchema.objects.all()
+    serializer_class  = EventCreateSerializer
+
+
+class EventUpdateAPIView(generics.RetrieveUpdateAPIView):
+    queryset = EventSchema.objects.all()
+    serializer_class  = EventCreateSerializer
+
+
+class EventDeleteAPIView(generics.RetrieveDestroyAPIView):
+    queryset = EventSchema.objects.all()
+    serializer_class  = EventCreateSerializer
