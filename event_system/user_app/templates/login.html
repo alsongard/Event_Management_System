@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+
+{% block content %}
+
+    <section class="bg-gray-50 flex items-center justify-center mt-[100px]  mb-[50px] p-4">
+        <div class="w-full max-w-md">
+        <form method="post" class="bg-white shadow-lg rounded-lg px-8 pt-6 pb-8 space-y-4">
+            <!-- CSRF Token placeholder -->
+            {%csrf_token%}
+            <div class="w-full">
+                    <label class="block text-gray-700 text-sm font-bold mb-2">
+                        Email
+                    </label>
+
+                    {{ form.email }}
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold mb-2">
+                    Password
+                </label>
+                {{ form.password }}
+            </div>
+            <div class="pt-4">
+                <input type="submit" value="Submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-4 rounded-lg cursor-pointer transition duration-200 ease-in-out transform hover:scale-105">
+            </div>
+        </form>
+    </section>
+{% endblock %}
+
