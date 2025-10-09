@@ -41,9 +41,12 @@ INSTALLED_APPS = [
     'user_app',
     'rest_framework',
     'pages',
+    'django_browser_reload',
+    
 ]
 
 MIDDLEWARE = [
+    'django_browser_reload.middleware.BrowserReloadMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
