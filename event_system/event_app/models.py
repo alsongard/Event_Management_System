@@ -30,3 +30,8 @@ class EventSchema(models.Model):
     event_attendees = models.IntegerField()
     event_description = models.CharField(max_length=800)
     event_price = models.IntegerField(null=False, blank=False, default=0)
+
+
+
+    def __str__(self):
+        return f'event_title: {self.event_title}\n event_type: {self.event_type}\n event_start_time:{self.event_start_time}'
