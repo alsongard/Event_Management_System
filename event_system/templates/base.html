@@ -7,17 +7,27 @@
 </head>
 <body class="bg-gray-50">
     <!-- Header/Navigation -->
-    <header class="bg-white shadow-md fixed w-full top-0 z-50">
-        <nav class="container mx-auto px-6 py-4">
+    <header class="bg-white  shadow-md fixed w-full top-0 z-50 ">
+        <nav class="container mx-auto  px-6 py-4">
             <div class="flex items-center justify-between">
+                <!-- LOGO -->
                 <div class="text-2xl font-bold text-blue-600">EventPro</div>
-                
-                <div class="hidden md:flex items-center space-x-8">
+            
+                <!-- navbar items -->
+                <div class="flex items-center  space-x-8  ">
                     <a  href="{% url 'home' %}" class="text-gray-700 hover:text-blue-600 transition">Home</a>
                     <a  href="{% url 'service'%}" class="text-gray-700 hover:text-blue-600 transition">Services</a>
                     <a  href="{% url 'about' %}" class="text-gray-700 hover:text-blue-600 transition">About</a>
                     <a  href="{% url 'contact' %}" class="text-gray-700 hover:text-blue-600 transition">Contact</a>
-                    <a href="" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Request Quote</a>
+                    <div class="flex flex-row gap-x-[5px] w-[100px]  bg-slate-100 py-[5px] px-[10px] rounded-md">
+                        
+                        <div class="relative w-full">
+                            <a  href="{% url 'loginUser' %}" class="text-gray-700 hover:text-blue-600   transition">Login</a>
+                            <a id="registerTag" href="{% url 'registerUser' %}" style="display:block;" class="text-gray-700 bg-slate-100 left-[-10px] w-[100px]  bg-slate-100 py-[5px] px-[10px]  absolute hover:text-blue-600 transition">Sign Up</a>
+                        </div>
+                        <svg id="dropDown" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down-icon lucide-chevron-down"><path d="m6 9 6 6 6-6"/></svg>
+                    </div>
+                    <!-- <a href="" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Request Quote</a> -->
                 </div>
                 <button class="md:hidden text-gray-700">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -325,5 +335,23 @@
             </div>
         </div>
     </footer>
+    <script type="text/javascript">
+        const dropDown = document.querySelector("#dropDown");
+        const registerTag  = document.querySelector("#registerTag");
+
+        console.log(dropDown);
+
+        dropDown.addEventListener("click", ()=>{
+            console.log("I was clicked!");
+            if (registerTag.style.display === "none")
+            {
+                registerTag.style.display="block"
+            }
+            else
+            {
+                registerTag.style.display="none"
+            }
+        })
+    </script>
 </body>
 </html>

@@ -11,16 +11,16 @@ class EventCreateSerializer(serializers.ModelSerializer): # serializer used when
 class UserEventViewSerializer(serializers.ModelSerializer): # serializer will be used when the user views events
     class Meta: 
         model = EventSchema
-        fields = [
-            'event_id',
-            'event_title',
-            'event_type',
-            'event_location',
-            'event_start_time',
-            'event_end_time',
-            'event_description',
-            'event_price'
-        ]
+        fields = '__all__'
+        # fields = [
+        #     'event_title',
+        #     'event_type',
+        #     'event_location',
+        #     'event_start_time',
+        #     'event_end_time',
+        #     'event_description',
+        #     'event_price'
+        # ]
 
 class EventAmdinViewSerializer(serializers.ModelSerializer):
     class Meta:
