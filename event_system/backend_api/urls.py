@@ -20,8 +20,10 @@ from pages.views import home_view
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", home_view, name='home' ),
+    path("accounts/", include("django.contrib.auth.urls"), name="accounts"),
     path("api/", include('rest_framework.urls'), name="rest_api"),
     path("", include('pages.urls')),  # Include the pages app URLs
     path("", include("user_app.urls")),
     path("event/", include("event_app.urls")),
+    path("__reload__/", include("django_browser_reload.urls")),
 ]
